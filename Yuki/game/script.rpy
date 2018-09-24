@@ -3,7 +3,7 @@
 # Declare characters used by this game. The color argument colorizes the
 # name of the character.
 
-define e = Character("Yuki")
+define y = Character("Yuki")
 
 
 # The game starts here.
@@ -14,21 +14,21 @@ label start:
     # add a file (named either "bg room.png" or "bg room.jpg") to the
     # images directory to show it.
 
-    scene bg room
+    scene origin
 
     # This shows a character sprite. A placeholder is used, but you can
     # replace it by adding a file named "yuki happy.png" to the images
     # directory.
 
-    show Yuki happy
+    show yuki happy
 
     # These display lines of dialogue.
 
     "Hello, my name is Yuki. I'm here to help."
 
-    e "I'm new here, so please bear with me."
+    y "I'm new here, so please bear with me."
 
-    e "Once you add a story, pictures, and music, you can release it to the world!"
+    y "Once you add a story, pictures, and music, you can release it to the world!"
 
     # This ends the game.
 
