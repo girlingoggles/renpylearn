@@ -4,7 +4,7 @@
 # name of the character.
 
 define y = Character("Yuki")
-
+define m = Character("player_name")
 
 # The game starts here.
 
@@ -26,9 +26,75 @@ label start:
 
     "Hello, my name is Yuki. I'm here to help."
 
-    y "I'm new here, so please bear with me."
+  # The phrase in the brackets is the text that the game will display to prompt 
+# the player to enter the name they've chosen.
 
-    y "Once you add a story, pictures, and music, you can release it to the world!"
+    $ player_name = renpy.input("What's your name?")
+
+    $ player_name = player_name.strip()
+# The .strip() instruction removes any extra spaces the player 
+# may have typed by accident.
+
+#  If the player can't be bothered to choose a name, then we
+#  choose a suitable one for them:
+    if player_name == "":
+        $ player_name="Sakura"
+
+# And get a nostalgic sigh from Seasons of Sakura fans!
+    
+# Now the other characters in the game can greet the player.
+  
+    y "Pleased to meet you, %(player_name)s!"
+    y "I'm new here, so please bear with me. What would you like to do?"
+
+menu:
+    "I would like to..."
+    "chat.":
+
+        jump chat
+
+    "math.":
+
+        jump math
+
+    "affirmation.":
+
+        jump affirmation
+
+    "cake.":
+
+        jump cake
+
+    "leave.":
+
+        jump leave
+
+label chat:
+
+show yuki happy
+
+y "Would you like to know something?"
+m "Sure"
+
+label affirmation:
+
+show yuki happy
+
+y "All things are for the eventual best"
+y "You've got this"
+y "Focus on what you can do"
+y " You can do anything"
+y "You are Smaug"
+y "Hakuna Matata"
+y " It means no worries"
+y "Being afraid of things going wrong isn't the way to make things go right"
+y " You know this"
+y "Remember how far you've come, not just how far you have to go. You are not where you want to be, but neither are you where you used to be"
+#m "Thank you"
+
+label math:
+
+#    y "Once you add a story, pictures, and music, you can release it to the world!"
 
     # This ends the game.
 
