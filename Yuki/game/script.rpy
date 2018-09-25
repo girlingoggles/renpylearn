@@ -4,7 +4,7 @@
 # name of the character.
 
 define y = Character("Yuki")
-define m = Character("player_name")
+define m = Character("Sakura")
 
 # The game starts here.
 
@@ -48,26 +48,27 @@ label start:
     y "I'm new here, so please bear with me. What would you like to do?"
 
 menu:
+
     "I would like to..."
     "chat.":
 
-        jump chat
+        call chat
 
     "math.":
 
-        jump math
+        call math
 
     "affirmation.":
 
-        jump affirmation
+        call affirmation
 
     "cake.":
 
-        jump cake
+        call cake
 
     "leave.":
 
-        jump leave
+        call leave
 
 label chat:
 
