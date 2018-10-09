@@ -4,7 +4,6 @@
 # name of the character.
 
 define y = Character("Yuki")
-define m = Character("Sakura")
 define m = Character("player_name")
 
 
