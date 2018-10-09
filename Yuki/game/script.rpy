@@ -47,7 +47,7 @@ label chat:
     scene bg stone
     show yuki happy
 
-    y happy2 "Would you like to know something?"
+    y vhappy "Would you like to know something?"
     m "Sure"
     $ import datetime
     $ t = datetime.datetime.now().strftime("%I:%M%p on %B %d, %Y")
@@ -55,6 +55,7 @@ label chat:
     jump yuki_menu
 
 label affirmation:
+    scene bg solace
     show yuki happy
 
     y "All things are for the eventual best"
@@ -63,6 +64,7 @@ label affirmation:
     y " You can do anything"
     y "You are Smaug"
     y "Hakuna Matata"
+    show yuki vhappy
     y " It means no worries"
     y "Being afraid of things going wrong isn't the way to make things go right"
     y " You know this"
@@ -78,13 +80,15 @@ label yes_no:
     jump yuki_menu
     
 label cake: 
+    show yuki mischief
     jump yuki_menu
     
 label music: 
+    show yuki happy
     menu:
         "What do you feel like?"
         "lofi":
-            $ webbrowser.open("https://www.youtube.com/watch?v=dJhW1J6gIWA&t=766s")
+            $ webbrowser.open("https://www.youtube.com/watch?v=dJhW1J6gIWA")
 
         "trance":
             $ webbrowser.open("https://www.youtube.com/watch?v=buqNTkjTY20")
@@ -107,3 +111,19 @@ label music:
         "None":
             pass
     jump yuki_menu
+
+label leave: 
+    show yuki sad
+    "It will be lonely without you here"
+    "But if you must..."
+    "must you?" 
+    menu:
+        "yes":
+            show yuki vsad
+            "Goodbye then, I'm glad you stopped by"
+            $ renpy.quit(0)
+        "no":
+            "I'm glad you can stay with me for a little longer."
+            "What would you like to do now?"
+            jump yuki_menu
+
