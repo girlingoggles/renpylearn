@@ -47,7 +47,9 @@ label start:
     y "Pleased to meet you, %(player_name)s!"
     y "I'm new here, so please bear with me. What would you like to do?"
 
-menu:
+jump yuki_menu
+
+label yuki_menu:
 
     "I would like to..."
     "chat":
