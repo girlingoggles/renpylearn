@@ -1,5 +1,9 @@
-*/saves/*
-*/cache/*
+*saves*
+*cache*
 *log.txt
 *errors.txt
+*.rpyc
+*.rpymc
 *~
+*.bak
+*raceback.txt
