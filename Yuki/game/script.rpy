@@ -50,25 +50,25 @@ label start:
 menu:
 
     "I would like to..."
-    "chat.":
+    "chat":
 
-        call chat
+        jump chat
 
-    "math.":
+    "math":
 
-        call math
+        jump math
 
-    "affirmation.":
+    "affirmation":
 
-        call affirmation
+        jump affirmation
 
-    "cake.":
+    "cake":
 
-        call cake
+        jump cake
 
-    "leave.":
+    "leave":
 
-        call leave
+        jump leave
 
 label chat:
 
@@ -76,6 +76,11 @@ show yuki happy
 
 y "Would you like to know something?"
 m "Sure"
+y "Today's date is 
+$ from time import ctime
+$ t = ctime()
+$ renpy.say(None, t)"
+jump yuki_menu
 
 label affirmation:
 
@@ -91,7 +96,8 @@ y " It means no worries"
 y "Being afraid of things going wrong isn't the way to make things go right"
 y " You know this"
 y "Remember how far you've come, not just how far you have to go. You are not where you want to be, but neither are you where you used to be"
-#m "Thank you"
+m "Thank you"
+jump yuki_menu
 
 label math:
 
