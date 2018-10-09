@@ -139,7 +139,7 @@ label music:
 
             "violin":
 
-                jump violin
+                jump launch_violin
 
             "glitch":
 
