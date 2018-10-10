@@ -23,24 +23,24 @@ init python:
 ## The colors of text in the interface.
 
 ## An accent color used throughout the interface to label and highlight text.
-define gui.accent_color = '#66cc00'
+define gui.accent_color = '#12c4ac'
 
 ## The color used for a text button when it is neither selected nor hovered.
-define gui.idle_color = '#555555'
+define gui.idle_color = '#42877d'
 
 ## The small color is used for small text, which needs to be brighter/darker to
 ## achieve the same effect.
-define gui.idle_small_color = '#aaaaaa'
+define gui.idle_small_color = '#38f3d9'
 
 ## The color that is used for buttons and bars that are hovered.
-define gui.hover_color = '#a3e066'
+define gui.hover_color = '#00dd9d'
 
 ## The color used for a text button when it is selected but not focused. A
 ## button is selected if it is the current screen or preference value.
-define gui.selected_color = '#ffffff'
+define gui.selected_color = '#00dd9d'
 
 ## The color used for a text button when it cannot be selected.
-define gui.insensitive_color = '#5555557f'
+define gui.insensitive_color = '#a1b9b2'
 
 ## Colors used for the portions of bars that are not filled in. These are not
 ## used directly, but are used when re-generating bar image files.
@@ -48,8 +48,8 @@ define gui.muted_color = '#285100'
 define gui.hover_muted_color = '#3d7a00'
 
 ## The colors used for dialogue and menu choice text.
-define gui.text_color = '#ffffff'
-define gui.interface_text_color = '#ffffff'
+define gui.text_color = '#aef5e0'
+define gui.interface_text_color = '#aef5e0'
 
 
 ## Fonts and Font Sizes ########################################################
@@ -64,19 +64,19 @@ define gui.name_font = "DejaVuSans.ttf"
 define gui.interface_font = "DejaVuSans.ttf"
 
 ## The size of normal dialogue text.
-define gui.text_size = 33
+define gui.text_size = 24
 
 ## The size of character names.
-define gui.name_text_size = 45
+define gui.name_text_size = 35
 
 ## The size of text in the game's user interface.
-define gui.interface_text_size = 36
+define gui.interface_text_size = 26
 
 ## The size of labels in the game's user interface.
-define gui.label_text_size = 42
+define gui.label_text_size = 33
 
 ## The size of text on the notify screen.
-define gui.notify_text_size = 24
+define gui.notify_text_size = 20
 
 ## The size of the game's title.
 define gui.title_text_size = 75
@@ -85,8 +85,8 @@ define gui.title_text_size = 75
 ## Main and Game Menus #########################################################
 
 ## The images used for the main and game menus.
-define gui.main_menu_background = "gui/main_menu.png"
-define gui.game_menu_background = "gui/game_menu.png"
+define gui.main_menu_background = "gui/stone.jpg"
+define gui.game_menu_background = "gui/stone.jpg"
 
 ## Should we show the name and version of the game?
 define gui.show_name = True
@@ -98,11 +98,11 @@ define gui.show_name = True
 ## time.
 
 ## The height of the textbox containing dialogue.
-define gui.textbox_height = 278
+define gui.textbox_height = 150
 
 ## The placement of the textbox vertically on the screen. 0.0 is the top, 0.5 is
 ## center, and 1.0 is the bottom.
-define gui.textbox_yalign = 1.0
+define gui.textbox_yalign = 0.0
 
 
 ## The placement of the speaking character's name, relative to the textbox.
