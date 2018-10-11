@@ -9,6 +9,10 @@ transform taller:
     xalign 0.5
     yalign 0.8
 
+transform side:
+    xalign 0.1
+    yalign 0.8
+
 define config.main_menu_music = "music.mp3"
 
 # The game starts here.
@@ -25,7 +29,10 @@ label start:
         $ m.name="Sakura"
 
     y "Pleased to meet you, %(player_name)s!"
+    y "and this is Miru"
+    show lucy happy at side
     y "I'm new here, so please bear with me. What would you like to do?"
+    hide lucy happy
     label yuki_menu:
         scene bg stone
         show yuki happy at taller
