@@ -29,6 +29,7 @@ label start:
         $ m.name="Sakura"
 
     y "Pleased to meet you, %(player_name)s!"
+# should show miru before you announce otherwise shes not there for a click
     y "and this is Miru"
     show lucy happy at side
     y "I'm new here, so please bear with me. What would you like to do?"
@@ -92,6 +93,7 @@ label affirmation:
 label math:
     $ number = renpy.input("What's your favourite number between 0 and 10?", allow='0123456789', exclude='qwertyuiopasdfghjklzxcvbnm,/;')
     $ number = int(number)
+    #this bit should all be in a python module not in yuki_renpy (returning the string y should say)
     if number == 0:
         y "Of course YOU would choose such a fancy number"
     elif number > 0 and number <= 1: 
@@ -192,6 +194,7 @@ label leave:
             y "Goodbye then, I'm glad you stopped by"
             $ renpy.quit(0)
         "no":
+	# yuki v happy doesn't exist yuki vhappy does
             show yuki v happy at taller
             y "I'm glad you can stay with me for a little longer."
             y "What would you like to do now?"
