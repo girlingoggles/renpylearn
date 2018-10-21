@@ -4,6 +4,13 @@ define m = Character("Sakura")
 init python:
     import webbrowser
     import subprocess
+    import datetime
+    import random
+#    from pprint import pprint
+#    import requests
+#    import sys, os
+#    import Profile
+
 
 transform taller:
     xalign 0.5
@@ -30,10 +37,10 @@ label start:
 
     y "Pleased to meet you, %(player_name)s!"
 # should show miru before you announce otherwise shes not there for a click
-    y "and this is Miru"
     show lucy happy at side
-    y "I'm new here, so please bear with me. What would you like to do?"
+    y "and this is Miru"
     hide lucy happy
+    y "I'm new here, so please bear with me. What would you like to do?"
     label yuki_menu:
         scene bg stone
         show yuki happy at taller
@@ -67,7 +74,6 @@ label chat:
 
     y vhappy "Would you like to know something?"
     m "Sure"
-    $ import datetime
     $ t = datetime.datetime.now().strftime("%I:%M%p on %B %d, %Y")
     y happy "It is curently %(t)s"
     jump yuki_menu
@@ -76,19 +82,16 @@ label affirmation:
     scene bg solace
     show yuki happy at taller
 
-    y "All things are for the eventual best"
-    y "You've got this"
-    y "Focus on what you can do"
-    y " You can do anything"
-    y "You are Smaug"
-    y "Hakuna Matata"
-    show yuki vhappy at taller
-    y " It means no worries"
-    y "Being afraid of things going wrong isn't the way to make things go right"
-    y " You know this"
-    y "Remember how far you've come, not just how far you have to go. You are not where you want to be, but neither are you where you used to be"
-    m "Thank you"
-    jump yuki_menu
+    $ nice = [ "All things are for the eventual best", "You've got this!", "Focus on what you can do, and you can do anything.", "You are Smaug", "Hakuna Matata: \nIt means No Worries!", "Being afraid of things going wrong isn't the way to make things go right. \nYou know this.", "Remember how far you've come, not just for far you have to go. \nYou are not where you want to be, but neither are you where you used to be", "Optimism is the faith that leads to achievement.", "Failure will never overtake me if my determination to succeed is strong enough.", "Good, better, best. Never let it rest 'til your good is better and your better is best.", "I love you", "It always seems impossible until it's done.", "It does not matter how slowly you go as long as you do not stop.", "We may encounter many defeats but we must not be defeated.", "I believe in you.", "You have already won. \nEverything else is extra."]
+    $ n = random.choice(nice)
+    y "%(n)s"
+    menu:
+        y "Another?"
+        "yes":
+             jump affirmation
+        "no":
+            m "Thank you"
+            jump yuki_menu
 
 label math:
     $ number = renpy.input("What's your favourite number between 0 and 10?", allow='0123456789', exclude='qwertyuiopasdfghjklzxcvbnm,/;')
@@ -161,7 +164,7 @@ label music:
         "lofi":
             $ subprocess.call(["xdg-open", "https://www.youtube.com/watch?v=dJhW1J6gIWA"])
 
-        "dubstep":
+        "trance":
             $ webbrowser.open("https://www.youtube.com/watch?v=buqNTkjTY20")
 
         "dubstep":
@@ -194,8 +197,7 @@ label leave:
             y "Goodbye then, I'm glad you stopped by"
             $ renpy.quit(0)
         "no":
-	# yuki v happy doesn't exist yuki vhappy does
-            show yuki v happy at taller
+            show yuki vhappy at taller
             y "I'm glad you can stay with me for a little longer."
             y "What would you like to do now?"
             jump yuki_menu
